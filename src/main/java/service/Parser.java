@@ -41,7 +41,6 @@ public class Parser {
                 output.add(operatorsStack.poll());
             }
         }
-        System.out.println(output.toString());
         return output;
     }
 

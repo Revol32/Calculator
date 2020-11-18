@@ -10,7 +10,6 @@ public class Validate {
                 .replaceAll("\\(-", "(0-")
                 .replaceAll("\\(\\+", "(0+")
                 .replaceAll("()", "");
-        System.out.println(expression);
         return expression;
     }
 
