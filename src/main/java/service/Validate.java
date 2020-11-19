@@ -9,7 +9,7 @@ public class Validate {
         expression = expression.replaceAll(" ", "")
                 .replaceAll("\\(-", "(0-")
                 .replaceAll("\\(\\+", "(0+")
-                .replaceAll("()", "");
+                .replaceAll("\\(\\)", "");
         return expression;
     }
 
@@ -33,7 +33,7 @@ public class Validate {
         if (matcher.find()) {
             throw new IllegalArgumentException("Не верное выражение. Недопустимое положение десятичного разделителя.");
         }
-        matcher = compile("[\\/][0][" + Operators.getOperatorsToString() + "]").matcher(expression);
+        matcher = compile("[\\/][0]+[" + Operators.getOperatorsToString() + "]|[\\/][0]+$|[\\/][0]+[\\.][0+]").matcher(expression);
         if (matcher.find()) {
             throw new IllegalArgumentException("division by zero");
         }

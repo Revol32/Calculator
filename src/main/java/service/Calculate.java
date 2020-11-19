@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Calculate {
-    public String calculate(ArrayList<String> expressionList) {
+    public static String calculate(ArrayList<String> expressionList) {
         double result = 0;
         for (int i = 0; expressionList.size() > i; i++) {
             if (expressionList.get(i).matches("[" + Operators.getOperatorsToStringWishOutBrackets() + "]")) {
